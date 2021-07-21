@@ -94,9 +94,16 @@ serverless invoke local --function hello
 Which should result in response similar to the following:
 
 ```
+Serverless: Running "serverless" installed locally (in service node_modules)
 {
-  "statusCode": 200,
-  "body": "{\n  \"message\": \"Go Serverless v2.0! Your function executed successfully!\",\n  \"input\": \"\"\n}"
+    "statusCode": 200,
+    "headers": {
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "*",
+        "Content-Type": "text/plain"
+    },
+    "body": "638607284.115170281111365948"
 }
 ```
 
@@ -113,6 +120,7 @@ After installation, you can start local emulation with:
 
 ```
 serverless offline
+GET | http://localhost:3000/dev/totalSupply  
 ```
 
 To learn more about the capabilities of `serverless-offline`, please refer to its [GitHub repository](https://github.com/dherault/serverless-offline).
